@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>event</key>
+		<string>The First National Proclamation of Thanksgiving by the United States</string>
+		<key>year</key>
+		<integer>1777</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Thanksgiving_(United_States)</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Mayflower docks at Plymouth Harbor</string>
+		<key>year</key>
+		<integer>1620</integer>
+		<key>url</key>
+		<string>http://www.history.com/this-day-in-history/mayflower-docks-at-plymouth-harbor</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Slavery is abolished in America</string>
+		<key>year</key>
+		<integer>1865</integer>
+		<key>url</key>
+		<string>http://www.history.com/this-day-in-history/slavery-abolished-in-america</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The first human to travel into space (Yuri Gagarin)</string>
+		<key>year</key>
+		<integer>1961</integer>
+		<key>url</key>
+		<string>http://www.space.com/16159-first-man-in-space.html</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The first commercial use of Otto Rohwedder’s new bread-slicing machine</string>
+		<key>year</key>
+		<integer>1928</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Otto_Frederick_Rohwedder</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Sack of Babylon (the fall of the Babylonian Emapire) BC</string>
+		<key>year</key>
+		<integer>-539</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Fall_of_Babylon</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Sack of Rome by the Vandals</string>
+		<key>year</key>
+		<integer>-455</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Sack_of_Rome_(455)</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Sack of Rome by the Visigoths</string>
+		<key>year</key>
+		<integer>-410</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Sack_of_Rome_(410)</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Empire State Building is completed</string>
+		<key>year</key>
+		<integer>1931</integer>
+		<key>url</key>
+		<string>http://www.history.com/this-day-in-history/empire-state-building-dedicated</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Global Positioning System (GPS) became operational</string>
+		<key>year</key>
+		<integer>1995</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Global_Positioning_System</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Sack of Rome by the Gauls / Battle of the Allia</string>
+		<key>year</key>
+		<integer>-390</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Battle_of_the_Allia</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Pony Express begins.</string>
+		<key>year</key>
+		<integer>1860</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Pony_Express</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Yosemite National Park created</string>
+		<key>year</key>
+		<integer>1890</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Yosemite_National_Park</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Johnstown (PA) Flood</string>
+		<key>year</key>
+		<integer>1889</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Johnstown_Flood</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Harvard College founded</string>
+		<key>year</key>
+		<integer>1636</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Harvard_College</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>North Carolina becomes a Royal Colony of Britain</string>
+		<key>year</key>
+		<integer>1729</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Province_of_Carolina</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Thomas Jefferson elected president</string>
+		<key>year</key>
+		<integer>1801</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Thomas_Jefferson</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Salem witch trials:</string>
+		<key>year</key>
+		<integer>1692</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Salem_witch_trials</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The Ford Motor Company was formed</string>
+		<key>year</key>
+		<integer>1903</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Ford_Motor_Company</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The NAACP was founded by W. E. B. Du Bois</string>
+		<key>year</key>
+		<integer>1909</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/NAACP</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>The first Indianapolis 500 was held</string>
+		<key>year</key>
+		<integer>1911</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Indianapolis_500</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>John Quincy Adams argues the case United States v. The Amistad before the Supreme Court</string>
+		<key>year</key>
+		<integer>1841</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/United_States_v._The_Amistad</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Arizona was admitted to the Union, becoming the 48th state</string>
+		<key>year</key>
+		<integer>1912</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Arizona</string>
+	</dict>
+</array>
+</plist>
