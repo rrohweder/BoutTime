@@ -60,7 +60,7 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-5A-xcx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimerDisplay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-5A-xcx">
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -166,7 +166,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-8X-r4S">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6S-8X-r4S">
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -178,6 +178,16 @@
                                 <state key="disabled" image="next_round_success.png"/>
                                 <connections>
                                     <action selector="NextRound:" destination="jY8-67-ea1" eventType="touchUpInside" id="mcq-kT-Qgw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKW-BJ-t2t">
+                                <frame key="frameInset" minX="329" minY="487" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SegueButton">
+                                    <color key="titleColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ln2-IS-MTG" kind="presentation" identifier="GameToResults" id="bFi-Q5-Ejr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,17 +242,57 @@
                         <outlet property="Event3" destination="ENW-FC-TGD" id="TDw-f2-O3K"/>
                         <outlet property="Event4" destination="vvP-t2-78I" id="vfK-Iu-jfe"/>
                         <outlet property="NextRoundButton" destination="c6S-8X-r4S" id="mkK-kv-GIx"/>
+                        <outlet property="TimerDisplay" destination="DT1-5A-xcx" id="eUe-HR-GOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pv1-bx-2tO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104.8" y="-6.746626686656672"/>
         </scene>
+        <!--Results View Controller-->
+        <scene sceneID="EFP-FK-1jd">
+            <objects>
+                <viewController id="ln2-IS-MTG" customClass="ResultsViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NmN-HB-2nM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Whq-Bq-Epq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CP2-mr-wwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Good job!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjT-6K-JXZ">
+                                <frame key="frameInset" minX="39" minY="234" width="296" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8E-RS-WBb">
+                                <frame key="frameInset" minX="39" minY="484" width="296" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="play_again.png"/>
+                                <connections>
+                                    <action selector="ReturnToGame:" destination="ln2-IS-MTG" eventType="touchUpInside" id="zwH-T5-nvL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="GameScore" destination="VjT-6K-JXZ" id="6U1-hT-vsx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igt-QO-FLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-8.5457271364317844"/>
+        </scene>
     </scenes>
     <resources>
         <image name="down_full.png" width="158" height="457"/>
         <image name="down_half.png" width="158" height="229"/>
         <image name="next_round_success.png" width="558" height="142"/>
+        <image name="play_again.png" width="450" height="142"/>
         <image name="up_full.png" width="158" height="457"/>
         <image name="up_half.png" width="158" height="229"/>
     </resources>
