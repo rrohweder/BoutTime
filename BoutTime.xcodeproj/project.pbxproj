@@ -15,6 +15,7 @@
 		10139A6B1E13FFD20045FEB4 /* BoutTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10139A6A1E13FFD20045FEB4 /* BoutTimeTests.swift */; };
 		10139A761E13FFD20045FEB4 /* BoutTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10139A751E13FFD20045FEB4 /* BoutTimeUITests.swift */; };
 		1030E9BF1E2145890088778D /* HistoricalEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1030E9BE1E2145890088778D /* HistoricalEvents.plist */; };
+		105728831E2BDACB0027CBB4 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 105728821E2BDACB0027CBB4 /* README.rtf */; };
 		106AEB4D1E17047D0084FC94 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106AEB4C1E17047D0084FC94 /* Events.swift */; };
 		10A6FB931E218971001C9AAA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A6FB921E218971001C9AAA /* GameViewController.swift */; };
 		10B4E7101E1C758500185D12 /* icon180@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B4E6FC1E1C758500185D12 /* icon180@3x.png */; };
@@ -73,6 +74,7 @@
 		10139A751E13FFD20045FEB4 /* BoutTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutTimeUITests.swift; sourceTree = "<group>"; };
 		10139A771E13FFD20045FEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1030E9BE1E2145890088778D /* HistoricalEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HistoricalEvents.plist; sourceTree = "<group>"; };
+		105728821E2BDACB0027CBB4 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		106AEB4C1E17047D0084FC94 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		10A6FB921E218971001C9AAA /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		10B4E6FC1E1C758500185D12 /* icon180@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon180@3x.png"; path = "BoutTimeAssets/icon180@3x.png"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		10139A541E13FFD20045FEB4 /* BoutTime */ = {
 			isa = PBXGroup;
 			children = (
+				105728821E2BDACB0027CBB4 /* README.rtf */,
 				10139A571E13FFD20045FEB4 /* ViewController.swift */,
 				10A6FB921E218971001C9AAA /* GameViewController.swift */,
 				10BF46B41E27267500C93215 /* ResultsViewController.swift */,
@@ -329,6 +332,7 @@
 				10B4E7111E1C758500185D12 /* icon40@1x.png in Resources */,
 				10139A5D1E13FFD20045FEB4 /* Assets.xcassets in Resources */,
 				1030E9BF1E2145890088778D /* HistoricalEvents.plist in Resources */,
+				105728831E2BDACB0027CBB4 /* README.rtf in Resources */,
 				10B4E7101E1C758500185D12 /* icon180@3x.png in Resources */,
 				10B4E71E1E1C758500185D12 /* next_round_fail.png in Resources */,
 				10139A5B1E13FFD20045FEB4 /* Main.storyboard in Resources */,
