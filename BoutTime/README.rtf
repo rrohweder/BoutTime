@@ -15,7 +15,7 @@ Git repo: https://github.com/rrohweder/BoutTime\
 \
 - ignore ViewController.swift - I was thinking I might want options for the user before they started the game.  I am NOT going to do that this pass.  It is my intention to remove it, and launch directly into GameViewController instead.\
 \
-- it looks like I am not successfully killing the timer (either on a motion shake, timer runs down to zero, or both). See startStopTimer() method.\
+- it looks like I am not successfully killing the timer (either on a motion shake, timer runs down to zero, or both). See startStopTimer() method.  I believe my problem is that I need the timer object to be global - that when startStopTimer("Stop") is called, I am not calling invalidate on the timer I started.  But I have been unable to figure-out how to declare a global timer variable that will be available for start and stop.\
 \
 - I am not confident that I am launching my results view / viewcontroller, and falling back to my GameController view / viewcontroller correctly (see code around line 203).  It appears to be working, but would like some feedback on whether what I am doing is the way it should be done.\
 \
