@@ -11,7 +11,6 @@ import CoreGraphics
 
 var setsShown: Int = 0
 var setsCorrect: Int = 0
-var timeToFinishSet = 30
 
 class GameViewController: UIViewController {
     @IBOutlet weak var Event1: UITextView!
@@ -26,12 +25,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var E4FullUp: UIButton!
     @IBOutlet weak var NextRoundButton: UIButton!
     @IBOutlet weak var TimerDisplay: UILabel!
+    // temp, for debug:
+    @IBOutlet weak var ScoreCheck: UILabel!
     
     let instanEvents = Events()
     var gameEvents: [EventData] = []
     var rounds = 0
-    var roundsPerGame = 2
-    var count:Int = timeToFinishSet
+    var roundsPerGame = 1
+    var count = 30
+    
+    var timer       = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +47,16 @@ class GameViewController: UIViewController {
         E3HalfUp.tag = 4
         E3HalfDown.tag = 5
         E4FullUp.tag = 6
+        ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
         do {
         gameEvents = try instanEvents.loadAllEvents(inputFile: "HistoricalEvents", fileType: "plist")
         } catch let error {
             print(error)
         }
+        // FIXME: unrecognized selector error
         instanEvents.refreshEventSet()
         rounds = 1
+        setsShown = 1
         displayEventSetWithoutYear()
     }
     
@@ -61,16 +67,14 @@ class GameViewController: UIViewController {
 
     
     func checkOrder() {
-        // FIXME: stop timer
         displayEventSetWithYear()
-        // FIXME: segue on NextRoundButton click
         if (instanEvents.eventsInCorrectOrder()) {
             setsCorrect += 1
+            ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
             NextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: .normal)
         } else {
             NextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: .normal)
         }
-        
         NextRoundButton.isEnabled = true
         NextRoundButton.isHidden = false
     }
@@ -83,7 +87,7 @@ class GameViewController: UIViewController {
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake
         {
-            checkOrder()
+            startStopTimer(command: "Stop")
         } else {
             print("WRONG ACTION")
         }
@@ -91,6 +95,7 @@ class GameViewController: UIViewController {
   
     @IBAction func swapThese(_ sender: UIButton) {
         
+        // set button pushed to selected image
         switch sender.tag {
         case 1:
             sender.setImage(#imageLiteral(resourceName: "down_full_selected.png"), for: .normal)
@@ -129,20 +134,37 @@ class GameViewController: UIViewController {
             print("sender.tag=\(sender.tag) was unexpected")
         }    
     }
-    
-    func startTimer() {
-        let _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.update), userInfo: nil, repeats: true)
+
+// move to TimerSupport class?
+    func startStopTimer(command: String) {
+        if command == "Start" {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.update), userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            // FIXME: timer keeps running, and so this call happens many times
+            checkOrder()
+        }
     }
     
-    func update() {
+    func update(timer: Timer) {
         if(count > 0) {
             count -= 1
             TimerDisplay.text = String(count)
         } else {
-            // FIXME: stop timer
-            count = timeToFinishSet
-            checkOrder()
+            startStopTimer(command: "Stop")
         }
+    }
+// to here
+    
+    func newGame() {
+        setsShown = 1
+        setsCorrect = 0
+        ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
+        rounds = 1
+        instanEvents.refreshEventSet()
+        self.loadViewIfNeeded()
+        displayEventSetWithoutYear()
+        // FIXME: do I need to do something to force redraw of GameViewController?
     }
 
     func displayEventSetWithoutYear() {
@@ -150,9 +172,10 @@ class GameViewController: UIViewController {
         Event2.text = instanEvents.eventSet[1].event
         Event3.text = instanEvents.eventSet[2].event
         Event4.text = instanEvents.eventSet[3].event
-        setsShown += 1
-        count = timeToFinishSet
-        startTimer()
+        ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
+        
+        count = 30
+        startStopTimer(command: "Start")
     }
     
     func displayEventSetWithYear() {
@@ -177,13 +200,21 @@ class GameViewController: UIViewController {
         
         if rounds == roundsPerGame {
             // Display the results view controller  
-            // this can't be the best way - create a button, create a segue, 
-            // and just leave the button hidden...
-            // https://developer.apple.com/reference/uikit/uiviewcontroller/1621413-performseguewithidentifier
+/*
+        // this can't be the best way - create a button, create a segue,
+        // and just leave the button hidden...
+        // https://developer.apple.com/reference/uikit/uiviewcontroller/1621413-performseguewithidentifier
             self.performSegue(withIdentifier: "GameToResults", sender: self)
+*/
+// How about this:
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "ResultsView")
+            self.present(controller, animated: true, completion: newGame)            
         } else {
             instanEvents.refreshEventSet()
             rounds += 1
+            setsShown += 1
             displayEventSetWithoutYear()
         }
     }

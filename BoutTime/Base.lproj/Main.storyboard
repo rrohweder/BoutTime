@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -190,6 +190,13 @@
                                     <segue destination="ln2-IS-MTG" kind="presentation" identifier="GameToResults" id="bFi-Q5-Ejr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="scorecheck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-nD-99j">
+                                <frame key="frameInset" minX="172" minY="11" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -242,6 +249,7 @@
                         <outlet property="Event3" destination="ENW-FC-TGD" id="TDw-f2-O3K"/>
                         <outlet property="Event4" destination="vvP-t2-78I" id="vfK-Iu-jfe"/>
                         <outlet property="NextRoundButton" destination="c6S-8X-r4S" id="mkK-kv-GIx"/>
+                        <outlet property="ScoreCheck" destination="oBo-nD-99j" id="WbT-GP-7yt"/>
                         <outlet property="TimerDisplay" destination="DT1-5A-xcx" id="eUe-HR-GOJ"/>
                     </connections>
                 </viewController>
@@ -252,7 +260,7 @@
         <!--Results View Controller-->
         <scene sceneID="EFP-FK-1jd">
             <objects>
-                <viewController id="ln2-IS-MTG" customClass="ResultsViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ResultsView" storyboardIdentifier="ResultsView" id="ln2-IS-MTG" customClass="ResultsViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NmN-HB-2nM"/>
                         <viewControllerLayoutGuide type="bottom" id="Whq-Bq-Epq"/>
