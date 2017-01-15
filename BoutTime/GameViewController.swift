@@ -200,14 +200,6 @@ class GameViewController: UIViewController {
         
         if rounds == roundsPerGame {
             // Display the results view controller  
-/*
-        // this can't be the best way - create a button, create a segue,
-        // and just leave the button hidden...
-        // https://developer.apple.com/reference/uikit/uiviewcontroller/1621413-performseguewithidentifier
-            self.performSegue(withIdentifier: "GameToResults", sender: self)
-*/
-// How about this:
-            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "ResultsView")
             self.present(controller, animated: true, completion: newGame)            
