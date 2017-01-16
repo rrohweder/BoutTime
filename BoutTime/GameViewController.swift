@@ -25,38 +25,35 @@ class GameViewController: UIViewController {
     @IBOutlet weak var E4FullUp: UIButton!
     @IBOutlet weak var NextRoundButton: UIButton!
     @IBOutlet weak var TimerDisplay: UILabel!
-    // temp, for debug:
-    @IBOutlet weak var ScoreCheck: UILabel!
     
     let instanEvents = Events()
     var gameEvents: [EventData] = []
     var rounds = 0
-    var roundsPerGame = 1
+    var roundsPerGame = 5
     var count = 30
     
-    var timer       = Timer()
+    var roundTimer       = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NextRoundButton.isHidden = true
-        TimerDisplay.text = ""
+        TimerDisplay.text = "30"
         E1FullDown.tag = 1
         E2HalfUp.tag = 2
         E2HalfDown.tag = 3
         E3HalfUp.tag = 4
         E3HalfDown.tag = 5
         E4FullUp.tag = 6
-        ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
         do {
         gameEvents = try instanEvents.loadAllEvents(inputFile: "HistoricalEvents", fileType: "plist")
         } catch let error {
             print(error)
         }
-        // FIXME: unrecognized selector error
         instanEvents.refreshEventSet()
         rounds = 1
         setsShown = 1
+        startStopTimer(command: "Start")
         displayEventSetWithoutYear()
     }
     
@@ -70,7 +67,6 @@ class GameViewController: UIViewController {
         displayEventSetWithYear()
         if (instanEvents.eventsInCorrectOrder()) {
             setsCorrect += 1
-            ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
             NextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: .normal)
         } else {
             NextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: .normal)
@@ -138,15 +134,14 @@ class GameViewController: UIViewController {
 // move to TimerSupport class?
     func startStopTimer(command: String) {
         if command == "Start" {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.update), userInfo: nil, repeats: true)
+            roundTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerDisplay), userInfo: nil, repeats: true)
         } else {
-            timer.invalidate()
-            // FIXME: timer keeps running, and so this call happens many times
+            roundTimer.invalidate()
             checkOrder()
         }
     }
     
-    func update(timer: Timer) {
+    func updateTimerDisplay(timer: Timer) {
         if(count > 0) {
             count -= 1
             TimerDisplay.text = String(count)
@@ -159,23 +154,20 @@ class GameViewController: UIViewController {
     func newGame() {
         setsShown = 1
         setsCorrect = 0
-        ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
         rounds = 1
+        count = 30
         instanEvents.refreshEventSet()
         self.loadViewIfNeeded()
+        startStopTimer(command: "Start")
         displayEventSetWithoutYear()
-        // FIXME: do I need to do something to force redraw of GameViewController?
     }
 
     func displayEventSetWithoutYear() {
+        TimerDisplay.text = "30"
         Event1.text = instanEvents.eventSet[0].event
         Event2.text = instanEvents.eventSet[1].event
         Event3.text = instanEvents.eventSet[2].event
         Event4.text = instanEvents.eventSet[3].event
-        ScoreCheck.text = "\(setsCorrect)/\(setsShown)"
-        
-        count = 30
-        startStopTimer(command: "Start")
     }
     
     func displayEventSetWithYear() {
@@ -207,6 +199,8 @@ class GameViewController: UIViewController {
             instanEvents.refreshEventSet()
             rounds += 1
             setsShown += 1
+            count = 30
+            startStopTimer(command: "Start")
             displayEventSetWithoutYear()
         }
     }

@@ -180,13 +180,6 @@
                                     <action selector="NextRound:" destination="jY8-67-ea1" eventType="touchUpInside" id="mcq-kT-Qgw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="scorecheck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-nD-99j">
-                                <frame key="frameInset" minX="172" minY="11" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.031372549020000001" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -239,7 +232,6 @@
                         <outlet property="Event3" destination="ENW-FC-TGD" id="TDw-f2-O3K"/>
                         <outlet property="Event4" destination="vvP-t2-78I" id="vfK-Iu-jfe"/>
                         <outlet property="NextRoundButton" destination="c6S-8X-r4S" id="mkK-kv-GIx"/>
-                        <outlet property="ScoreCheck" destination="oBo-nD-99j" id="WbT-GP-7yt"/>
                         <outlet property="TimerDisplay" destination="DT1-5A-xcx" id="eUe-HR-GOJ"/>
                     </connections>
                 </viewController>
