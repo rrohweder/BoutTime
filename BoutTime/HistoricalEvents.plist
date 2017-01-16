@@ -21,8 +21,6 @@
 	<dict>
 		<key>event</key>
 		<string>Slavery is abolished in America</string>
-		<key>year</key>
-		<integer>1865</integer>
 		<key>url</key>
 		<string>http://www.history.com/this-day-in-history/slavery-abolished-in-america</string>
 	</dict>

@@ -42,7 +42,15 @@ class Events {
     }
     
     // load event data into array of structs
+    // if we can't read the file at all, fatalerror exit.
+    // each input record is required to have the event text and year it occurred.
+    // running into one, or a few, that don't have event and/or year is fine - 
+    // load the rest, but we shouldn't launch the game if we don't have at least
+    // 20 valid events, or we should fatalerror exit.
+    
     func loadAllEvents(inputFile: String, fileType: String) throws -> [EventData] {
+        var inputRow = 0
+        var badrecords = 0
         
         do {
             let vanillaArray = try PlistImporter.importDictionaries(fromFile: inputFile, ofType: fileType)
@@ -50,27 +58,30 @@ class Events {
         } catch let error {
             fatalError("\(error)")
         }
-        var inputRow = 0
         for dict in vanillaData {
             inputRow += 1
-            // FIXME: was getting error: "initializer for conditional binding must
-            // have Optional type, not String" when I tried to "if let" these
-            
+
+            // for this exercise, event and year are required, url is not.
             if dict["event"] != nil {
                 eventStruct.event = dict["event"] as! String
+                if dict["year"] != nil {
+                    eventStruct.year = dict["year"] as! Int
+                    if dict["url"] != nil {
+                        eventStruct.url = dict["url"] as! String
+                    }
+                    allEvents.append(eventStruct)
+                } else {
+                    // report bad row
+                    print("Missing year, data input row \(inputRow)")
+                    badrecords += 1
+                }
             } else {
-                throw EventError.MissingEvent("Missing event, data input row \(inputRow)")
+                print("Missing event, data input row \(inputRow)")
+                badrecords += 1
             }
-            if dict["year"] != nil {
-                eventStruct.year = dict["year"] as! Int
-            } else {
-                throw EventError.MissingYear("Missing year, data input row \(inputRow)")
+            if ((vanillaData.count - badrecords) < 20) {
+                fatalError("not enough good records from input file to play")
             }
-                    
-            if dict["url"] != nil {
-                eventStruct.url = dict["url"] as! String
-            }
-            allEvents.append(eventStruct)
         }
         return allEvents
     }

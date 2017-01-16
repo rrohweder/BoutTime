@@ -20,7 +20,7 @@ class PlistImporter {
             throw PlistImportError.invalidResource(resourceName: name)
         }
         guard let arrayOfDictionaries = NSArray.init(contentsOfFile: path) as? [[String: AnyObject]] else {
-            throw PlistImportError.conversionFailure(resourceName: "\(name) to array of dictionaries")
+            throw PlistImportError.conversionFailure(resourceName: name)
         }
         return arrayOfDictionaries
     }
