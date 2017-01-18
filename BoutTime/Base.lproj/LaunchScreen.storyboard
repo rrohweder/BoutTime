@@ -18,12 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-Ce-gMm">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-Ce-gMm"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="d5i-Ce-gMm" secondAttribute="trailing" id="2az-aI-ApK"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="d5i-Ce-gMm" secondAttribute="bottom" id="Sox-nH-giN"/>
+                            <constraint firstItem="d5i-Ce-gMm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Vwm-ku-55i"/>
+                            <constraint firstItem="d5i-Ce-gMm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="k6h-6g-300"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

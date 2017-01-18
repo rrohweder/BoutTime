@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jY8-67-ea1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -30,9 +30,6 @@
                                 <frame key="frameInset" minX="78" minY="516" width="187" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Game"/>
-                                <connections>
-                                    <segue destination="jY8-67-ea1" kind="show" id="5Ku-QE-QfW"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,27 +63,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbR-B6-clT">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="yxq-Dp-pcW"/>
-                                    <constraint firstAttribute="width" constant="52" id="zvQ-qi-mAh"/>
-                                </constraints>
-                                <state key="normal" title="E2HalfUp" image="up_half.png"/>
-                                <connections>
-                                    <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="6GJ-oB-eWo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgX-3c-QYZ">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="Er3-oa-uAk"/>
-                                    <constraint firstAttribute="height" constant="42" id="oJi-sC-G14"/>
-                                </constraints>
-                                <state key="normal" title="E2HalfDown" image="down_half.png"/>
-                                <connections>
-                                    <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="7pF-HY-O3R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-LQ-0M8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-LQ-0M8">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="beu-y4-WZM"/>
                                     <constraint firstAttribute="height" constant="90" id="tVB-hv-UNA"/>
@@ -96,7 +73,27 @@
                                     <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="5We-vU-4X4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-00-Jn4" userLabel="E3HalfUp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbR-B6-clT">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="yxq-Dp-pcW"/>
+                                    <constraint firstAttribute="width" constant="52" id="zvQ-qi-mAh"/>
+                                </constraints>
+                                <state key="normal" title="E2HalfUp" image="up_half.png"/>
+                                <connections>
+                                    <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="6GJ-oB-eWo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgX-3c-QYZ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="Er3-oa-uAk"/>
+                                    <constraint firstAttribute="height" constant="42" id="oJi-sC-G14"/>
+                                </constraints>
+                                <state key="normal" title="E2HalfDown" image="down_half.png"/>
+                                <connections>
+                                    <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="7pF-HY-O3R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-00-Jn4" userLabel="E3HalfUp">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="CPh-rM-Gxn"/>
                                     <constraint firstAttribute="width" constant="52" id="xU0-vk-uTz"/>
@@ -106,7 +103,7 @@
                                     <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="UEG-ed-Ecv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek0-kg-Zmt" userLabel="E3HalfDown">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek0-kg-Zmt" userLabel="E3HalfDown">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="4U6-l6-jLe"/>
                                     <constraint firstAttribute="height" constant="42" id="Tqh-5h-tNm"/>
@@ -116,7 +113,7 @@
                                     <action selector="swapThese:" destination="jY8-67-ea1" eventType="touchUpInside" id="YEN-8A-e8v"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3s-rq-RLu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3s-rq-RLu">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="OQJ-ys-owy"/>
                                     <constraint firstAttribute="height" constant="90" id="kUT-6f-YYL"/>

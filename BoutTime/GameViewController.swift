@@ -39,12 +39,20 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         NextRoundButton.isHidden = true
         TimerDisplay.text = "30"
+        
         E1FullDown.tag = 1
+        E1FullDown.setImage(#imageLiteral(resourceName: "down_full_selected.png"), for: .highlighted)
         E2HalfUp.tag = 2
+        E2HalfUp.setImage(#imageLiteral(resourceName: "down_half_selected.png"), for: .highlighted)
         E2HalfDown.tag = 3
+        E2HalfDown.setImage(#imageLiteral(resourceName: "down_half_selected.png"), for: .highlighted)
         E3HalfUp.tag = 4
+        E3HalfUp.setImage(#imageLiteral(resourceName: "up_half_selected.png"), for: .highlighted)
         E3HalfDown.tag = 5
+        E3HalfDown.setImage(#imageLiteral(resourceName: "down_half_selected.png"), for: .highlighted)
         E4FullUp.tag = 6
+        E4FullUp.setImage(#imageLiteral(resourceName: "up_full_selected.png"), for: .highlighted)
+        
         do {
         gameEvents = try instanEvents.loadAllEvents(inputFile: "HistoricalEvents", fileType: "plist")
         } catch let error {
@@ -93,42 +101,22 @@ class GameViewController: UIViewController {
         
         // set button pushed to selected image
         switch sender.tag {
-        case 1:
-            sender.setImage(#imageLiteral(resourceName: "down_full_selected.png"), for: .normal)
-            instanEvents.swapEvents(swapEvent: 0, withEvent: 1)
-        case 2:
-            sender.setImage(#imageLiteral(resourceName: "up_half_selected.png"), for: .normal)
-            instanEvents.swapEvents(swapEvent: 1, withEvent: 0)
-        case 3:
-            sender.setImage(#imageLiteral(resourceName: "down_half_selected.png"), for: .normal)
-            instanEvents.swapEvents(swapEvent: 1, withEvent: 2)
-        case 4:
-            sender.setImage(#imageLiteral(resourceName: "up_half_selected.png"), for: .normal)
-            instanEvents.swapEvents(swapEvent: 2, withEvent: 1)
-        case 5:
-            sender.setImage(#imageLiteral(resourceName: "down_half_selected.png"), for: .normal)
-            instanEvents.swapEvents(swapEvent: 2, withEvent: 3)
-        case 6:
-            sender.setImage(#imageLiteral(resourceName: "up_full_selected.png"), for: .normal)
-            instanEvents.swapEvents(swapEvent: 3, withEvent: 2)
-        default:
-            print("sender.tag=\(sender.tag) was unexpected")
+            case 1:
+                instanEvents.swapEvents(swapEvent: 0, withEvent: 1)
+            case 2:
+                instanEvents.swapEvents(swapEvent: 1, withEvent: 0)
+            case 3:
+                instanEvents.swapEvents(swapEvent: 1, withEvent: 2)
+            case 4:
+                instanEvents.swapEvents(swapEvent: 2, withEvent: 1)
+            case 5:
+                instanEvents.swapEvents(swapEvent: 2, withEvent: 3)
+            case 6:
+                instanEvents.swapEvents(swapEvent: 3, withEvent: 2)
+            default:
+                print("sender.tag=\(sender.tag) was unexpected")
         }
-        
         displayEventSetWithoutYear()
-        
-        switch sender.tag {
-        case 1:
-            sender.setImage(#imageLiteral(resourceName: "down_full.png"), for: .normal)
-        case 2,4:
-            sender.setImage(#imageLiteral(resourceName: "up_half.png"), for: .normal)
-        case 3,5:
-            sender.setImage(#imageLiteral(resourceName: "down_half.png"), for: .normal)
-        case 6:
-            sender.setImage(#imageLiteral(resourceName: "up_full.png"), for: .normal)
-        default:
-            print("sender.tag=\(sender.tag) was unexpected")
-        }    
     }
 
 // move to TimerSupport class?
@@ -169,10 +157,35 @@ class GameViewController: UIViewController {
         Event3.text = instanEvents.eventSet[2].event
         Event4.text = instanEvents.eventSet[3].event
     }
+
+    enum ButtonStates {
+        case enabled
+        case disabled
+    }
+    
+    func setButtonState(state: ButtonStates) {
+        switch state {
+        case .enabled:
+            E1FullDown.isEnabled = true
+            E2HalfUp.isEnabled = true
+            E2HalfDown.isEnabled = true
+            E3HalfUp.isEnabled = true
+            E3HalfDown.isEnabled = true
+            E4FullUp.isEnabled = true
+        case .disabled:
+            E1FullDown.isEnabled = false
+            E2HalfUp.isEnabled = false
+            E2HalfDown.isEnabled = false
+            E3HalfUp.isEnabled = false
+            E3HalfDown.isEnabled = false
+            E4FullUp.isEnabled = false
+        }
+    }
     
     func displayEventSetWithYear() {
         var adjustedYears:[String] = ["0","1","2","3"]
         
+        // change a negative year to BC presentation
         for i in 0...instanEvents.eventSet.count - 1 {
             if instanEvents.eventSet[i].year < 0 {
                 adjustedYears[i] = "\(instanEvents.eventSet[i].year * -1)BC"
@@ -180,6 +193,8 @@ class GameViewController: UIViewController {
                 adjustedYears[i] = "\(instanEvents.eventSet[i].year)"
             }
         }
+        
+        setButtonState(state: ButtonStates.disabled)
         
         Event1.text = "\(instanEvents.eventSet[0].event) - \(adjustedYears[0])\n\( instanEvents.eventSet[0].url)"
         Event2.text = "\(instanEvents.eventSet[1].event) - \(adjustedYears[1])\n\( instanEvents.eventSet[1].url)"
@@ -201,6 +216,7 @@ class GameViewController: UIViewController {
             setsShown += 1
             count = 30
             startStopTimer(command: "Start")
+            setButtonState(state: ButtonStates.enabled)
             displayEventSetWithoutYear()
         }
     }
