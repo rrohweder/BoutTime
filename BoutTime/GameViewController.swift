@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
     let instanEvents = Events()
     var gameEvents: [EventData] = []
     var rounds = 0
-    var roundsPerGame = 5
+    var roundsPerGame = 6
     var count = 30
     
     var roundTimer       = Timer()
@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NextRoundButton.isHidden = true
-        TimerDisplay.text = "30"
+        TimerDisplay.text = "60"
         
         E1FullDown.tag = 1
         E1FullDown.setImage(#imageLiteral(resourceName: "down_full_selected.png"), for: .highlighted)

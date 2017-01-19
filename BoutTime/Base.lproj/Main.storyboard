@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="376" id="Clm-qw-AQU"/>
                                     <constraint firstAttribute="width" constant="297" id="YqA-Ia-Vya"/>
                                 </constraints>
-                                <string key="text">The object of this game is to order a set of events chronologically. Use the buttons on the right side to move events up or down.  When you have finished ordering them, shake your phone to have your order checked.  A game consists of ordering 5 sets.  When you are ready, click below:</string>
+                                <string key="text">The object of this game is to order a set of events chronologically. Use the buttons on the right side to move events up or down.  When you have finished ordering them, shake your phone to have your order checked.  A game consists of ordering 6 sets.  When you are ready, click below:</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
