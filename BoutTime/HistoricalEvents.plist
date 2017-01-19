@@ -21,6 +21,8 @@
 	<dict>
 		<key>event</key>
 		<string>Slavery is abolished in America</string>
+		<key>year</key>
+		<string>1865</string>
 		<key>url</key>
 		<string>http://www.history.com/this-day-in-history/slavery-abolished-in-america</string>
 	</dict>
@@ -183,6 +185,38 @@
 		<integer>1912</integer>
 		<key>url</key>
 		<string>https://en.wikipedia.org/wiki/Arizona</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Brazil declares their independence</string>
+		<key>year</key>
+		<integer>1822</integer>
+		<key>url</key>
+		<string>http://www.brazil.org.za/key-dates-in-history-of-brazil.html</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Colombia gains its independence from Spain </string>
+		<key>year</key>
+		<integer>1890</integer>
+		<key>url</key>
+		<string>http://www.datesandevents.org/places-timelines/11-colombia-history-timeline.htm</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>Napoleon Bonaparte occupies Spain and installs his brother as head of state.</string>
+		<key>year</key>
+		<integer>1808</integer>
+		<key>url</key>
+		<string>http://www.history.com/topics/mexico/mexico-timeline</string>
+	</dict>
+	<dict>
+		<key>event</key>
+		<string>An earthquake in Mexico City kills nearly 10,000 people</string>
+		<key>year</key>
+		<integer>1985</integer>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/1985_Mexico_City_earthquake</string>
 	</dict>
 </array>
 </plist>
