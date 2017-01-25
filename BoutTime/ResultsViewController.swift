@@ -15,7 +15,6 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // cannot access counters in GameViewController..?
         GameScore.text = "\(setsCorrect) out of \(setsShown) correctly ordered sets"
     }
 
